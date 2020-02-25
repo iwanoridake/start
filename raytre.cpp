@@ -189,12 +189,8 @@ public:
     //uv座標の(i,j)の場所の光線を取得する
     Ray GetScreenRay(int i, int j)
     {
-        //-0.5~0.5の乱数を取得する
-        float randA = drand48() - 0.5;
-        float randB = drand48() - 0.5;
         //光線の場所を求める
-        //Vector3 rayPos= screenOrigin+ X * i+ Y * j;
-        Vector3 rayPos = screenOrigin + X * (i + randA) + Y * (j + randB);
+        Vector3 rayPos = screenOrigin + X * i + Y * j;
         //光線をリターンする
         return Ray(eye, (rayPos - eye).Norm());
     }
@@ -389,7 +385,7 @@ public:
 int main()
 {
     World world;
-    char imagePath[] = "./test6.ppm";
+    char imagePath[] = "./test7.ppm";
     world.GetImage(imagePath);
     return 0;
 }

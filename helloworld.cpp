@@ -5,6 +5,6 @@
 
 int main()
 {
-    printf("HelloWorld/n");
+    printf("HelloWorld\n");
     return 0;
 }
